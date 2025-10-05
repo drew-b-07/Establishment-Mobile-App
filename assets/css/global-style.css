@@ -5,6 +5,8 @@
   --color-footer-bg: #FF6900;
   --color-current-nav-text: #FFD700;
   --color-nav-text: #9A9A9A;
+  --color-input-bg: #CECCCC;
+  --color-black-shadow: rgba(0, 0, 0, .25);
 }
 
 *{

@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Establishment App</title>
-    <link rel="stylesheet" href="../signup/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../../assets/css/global-style.css">
+    <link rel="stylesheet" href="assets/css/tablet-size-responsiveness.css">
     <div id="wrapper">
         <div class="signup-container">
             <img src="../../assets//images/estab-icon.png" alt="img" srcset="">
@@ -16,10 +17,10 @@
                 <label for="address">Address</label>
                 <input type="text" class="ip-address">
                 <label for="pnumber">Phone Number</label>
-                <input type="number" class="ip-pnumber">
+                <input type="number" class="ip-pnumber" maxlength="11">
             </form>
                 <button onclick="window.location.href = '../login/index.html'">Sign Up</button>
-                <label for="signup">Do you have an account? <a href="../login/index.html">Sign In Here!</a></label>
+                <p>Do you have an account? <a href="../login/index.html">Sign In Here!</a></p>
         </div>
     </div>
 </head>

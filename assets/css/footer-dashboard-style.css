@@ -28,5 +28,5 @@ nav {
 }
 
 .current-nav > a{
-    color: var(--color-current-nav-text);
+  color: var(--color-current-nav-text);
 }
