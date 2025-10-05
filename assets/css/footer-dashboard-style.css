@@ -1,10 +1,11 @@
-footer {
+footer{
   background: var(--color-footer-bg);
-  padding: 8px 0;
+  min-height: 75px;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  padding: 8px 0;
 }
 
 nav {
