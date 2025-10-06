@@ -2,6 +2,14 @@
   min-height: 100vh;
 }
 
+/* CONTENT SPACING */
+.content {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+/* ADD DEVICE ICON */
 .add-device{
   display: flex;
   justify-content: center;
@@ -9,4 +17,27 @@
   right: 20px;
   top: 10px;
   position: fixed;
+}
+
+/* DEVICE STATUS CONTAINER */
+.details-container {
+  background: var(--color-container-bg);
+  width: 332px;
+  height: 113px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 3px;
+  margin: 50px auto;
+}
+
+.details-container h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.details-container p {
+  margin: 3px 0;
+  font-size: 15px;
+  font-weight: 600;
 }

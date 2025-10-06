@@ -31,22 +31,23 @@
   cursor: pointer;
 } */
 
+/* CONTENT SPACING */
 .content {
   flex: 1;
   padding: 15px;
   overflow-y: auto;
 }
 
-/* DEVICE BUTTON  */
+/* DEVICE BUTTON CONTAINER STYLE*/
 .device{
   height: 150px;
   border-radius: 10px;
   background: var(--color-button-bg);
 }
 
-/* .device h3 {
+.content h3 {
   margin: 0 0 8px 0;
-} */
+}
 
 .device button {
   background: none;
@@ -87,6 +88,7 @@
   background-color: var(--color-black-shadow);
 }
 
+/* BACK FUNCTION ORIENTATION */
 .back-function{
   display: flex;
   justify-content: center;
@@ -96,6 +98,7 @@
   top: 20px;
 }
 
+/* DEVICE HISTORY STYLE*/
 .historydate{
   display: flex;
   flex-direction: column;
@@ -128,6 +131,82 @@
   margin-left: auto;        
   font-size: 18px;
 }
+
+/* DETAILS HISTORY STYLE */
+.details-container {
+  background: var(--color-container-bg);
+  width: 332px;
+  height: 113px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 3px;
+  margin: 50px auto;
+}
+
+.details-container h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.details-container p {
+  margin: 3px 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* IMAGE EVIDENCE */
+h1{
+  text-align: center;
+}
+
+.image-container{
+  display: flex;
+  justify-content: center;
+}
+
+.image-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 0fr);
+  gap: 15px;
+  padding: 20px;
+}
+
+.image-evidence{
+  height: 160px; /*Image Size*/
+  width: 300px; /*Image Size*/
+  border: 1px solid red;
+}
+
+/* TRYING THIS ONE FROM CHATGPT */
+/* .evidence-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  justify-items: center;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.evidence-grid img {
+  width: 100%;
+  max-width: 180px;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+} */
+
+
+/* NO CONTENT YET */
 
 /* .info-card {
   background: #e5e5e5;
