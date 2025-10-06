@@ -54,7 +54,7 @@
   height: 50px;
   display: flex;
   align-items: center;
-  padding: 0 20px;          /* left + right padding */
+  padding: 0 20px;  
   font-size: 18px;
   border-top: none;
   border-left: none;
@@ -63,11 +63,9 @@
 }
 
 .device button::after {
-  content: '›';             /* or '>' or '»' or use '\00BB' */
-  margin-left: auto;        /* pushes it to the far right */
+  content: '>';      
+  margin-left: auto;        
   font-size: 18px;
-  opacity: 0.8;
-  pointer-events: none;     /* so click reaches the button */
 }
 
 .b1{
@@ -87,6 +85,48 @@
 .device button:hover{
   cursor: pointer;
   background-color: var(--color-black-shadow);
+}
+
+.back-function{
+  display: flex;
+  justify-content: center;
+  align-items: center;   
+  position: fixed;         
+  left: 30px;
+  top: 20px;
+}
+
+.historydate{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 10px;
+  gap: 5px;
+}
+
+.historydate p{
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--color-black);
+}
+
+.historydate button{
+  background: var(--color-button-bg);
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  height: 50px;
+  padding: 0 20px;
+  border-radius: 15px;
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+}
+
+.historydate button::after {
+  content: '>';      
+  margin-left: auto;        
+  font-size: 18px;
 }
 
 /* .info-card {
