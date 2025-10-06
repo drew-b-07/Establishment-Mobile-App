@@ -10,10 +10,34 @@
     <title>Devices</title>
 </head>
 <body>
-    <header>
-      <nav>
-        <img src="../../../assets/images/back icon.png" alt="icon" class="back-function">
-        <h1>AP Hotspot</h1>
-    </header>
+      <header>
+        <nav>
+          <img src="../../../assets/images/back icon.png" alt="icon" class="back-function">
+          <h1>AP Hotspot</h1>
+      </header>
+
+      <div class="step-container">
+        <span>Power On</span>
+        <span>Select WiFi</span>
+        <span>Connect to AP hotspot</span>
+        <span>Connecting</span>
+      </div>
+
+      <div class="wifi-list">
+        <div class="wifi-item" onclick="showPopup('Wifi01')">Wifi01</div>
+      </div>
+
+      <div class="overlay" onclick="closePopup()"></div>
+
+      <div class="popup" id="popup">
+        <h3 id="wifi-name">Connecting...</h3>
+        <input type="password" placeholder="Enter Password" id="password">
+        <div class="button-orientation">
+          <button class="cancel" onclick="closePopup()">Cancel</button>
+          <button class="confirm" onclick="confirmConnect()">Confirm</button>
+        </div>
+      </div>
+
+      <script src="script.js"></script>
 </body>
 </html>
