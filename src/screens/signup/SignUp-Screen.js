@@ -90,7 +90,6 @@ export default function SignUpScreen({ navigation }) {
         if(!establishment_users[0].verified) {
           showInfoToast("Your account is not yet, we sent you an email to verify your account.", "Unverified Account", 5000);
 
-
           var {data, error} = await supabase.auth.resend({email, type: "signup", options: {emailRedirectTo: "https://ebok18.github.io/VerifiedAccount?role=est"}});
 
           if(error) return showErrorToast(`${error.message}`, `${error.cause}`);
