@@ -6,7 +6,9 @@
   background: linear-gradient(to right,#FF5656,#FF8746,#FFEA00,#E06F1E,#C99034);
 }
 
-.signup-container{
+
+/* RESET PASS STYLE */
+.resetpass-container{
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -14,14 +16,14 @@
   gap: 15px;
 }
 
-.signup-form-container{
+.resetpass-form-container{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   gap: 5px;
 }
 
-.signup-form-container input{
+.resetpass-form-container input{
   border-radius: 7px;
   width: 260px;
   height: 40px;
@@ -32,18 +34,7 @@
   padding-left: 10px;
 }
 
-/*Hides Spinner Number*/
-.ip-pnumber::-webkit-inner-spin-button,
-.ip-pnumber::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.ip-pnumber {
-  -moz-appearance: textfield;
-}
-
-.signup-container button{
+.resetpass-container button{
   font-size: 20px;
   width: 100px;
   height: 40px;
@@ -51,24 +42,47 @@
   border-style: none;
 }
 
-.signup-container button:hover{
+.resetpass-container button:hover{
   background-color: #bebebe;
   transition: background ease 250ms;
 }
 
-.signup-container img{
-  width: 300px;
+.resetpass-container img{
+  width: clamp(120px, 170px, 220px);
 }
 
-.signup-container label{
+.resetpass-container label{
   font-size: 24px;
 }
 
-.signup-container h1{
+.resetpass-container h1{
   font-weight: 500;
-  font-size: 40px;
+  font-size: 35px;
 }
 
-.signup-container p,a{
+.resetpass-container p,a{
   font-size: 14px;
+}
+
+/* HIDE/SHOW PASSWORD */
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-container input{
+  padding-right: 38px;
+}
+
+.password-container .toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+}
+
+.password-container .toggle-password:hover {
+  color: #000;
 }

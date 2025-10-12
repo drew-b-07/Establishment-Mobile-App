@@ -6,28 +6,22 @@
     <title>Establishment App</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../../assets/css/global-style.css">
-    <link rel="stylesheet" href="assets/css/tablet-size-responsiveness.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/tablet-size-responsiveness.css">
 </head>
 <body>
     <div id="wrapper">
-        <div class="signin-container">
+        <div class="resetpass-container">
             <img src="../../assets/images/estab-icon.png" alt="img" srcset="">
-            <h1>Sign In</h1>
-            <form action="" class="signin-form-container">
-                
-                <label for="email">Email Address</label>
-                <input type="email" class="ip-email">
-
-                <label for="password">Password</label>
+            <h1>Reset Password</h1>
+            <form action="" class="resetpass-form-container">
+                <label for="password">New Password</label>
                     <div class="password-container">
                         <input type="password" class="ip-password" id="password">
                         <i class="fa-solid fa-eye-slash toggle-password" id="togglePassword"></i>
                     </div>
             </form>
-                <button onclick="window.location.href='../dashboard/devices/index.html'">Sign In</button>
-                <p>Don't have an account? <a href="../signup/index.html">Sign Up Here!</a></p>
-                <a href="../forgotpass/index.html">Forgot Password</a>
+            <button onclick="window.location.href='../login/index.html'">Submit</button>
         </div>
     </div>
     <script src="script.js"></script>

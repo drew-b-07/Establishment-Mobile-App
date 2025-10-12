@@ -30,6 +30,29 @@
   border-style: none;
   font-size: 20px;
   padding-left: 10px;
+  padding-right: 10px;
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-container input{
+  padding-right: 38px;
+}
+
+.password-container .toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+}
+
+.password-container .toggle-password:hover {
+  color: #000;
 }
 
 .signin-container button{
@@ -46,7 +69,7 @@
 }
 
 .signin-container img{
-  width: 300px;
+  width: clamp(120px, 170px, 220px);
 }
 
 .signin-container label{

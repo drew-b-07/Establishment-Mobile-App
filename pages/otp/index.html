@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Establishment App</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../../assets/css/global-style.css">
     <link rel="stylesheet" href="assets/css/tablet-size-responsiveness.css">
+    <title>One-Time Password</title>
 </head>
 <body>
     <div id="wrapper">
-        <div class="forgotpass-container">
+        <div class="otp-container">
             <img src="../../assets/images/estab-icon.png" alt="img" srcset="">
-            <h1>Forgot Password?</h1>
-            <form action="" class="forgotpass-form-container">
-                <label for="email">Email Address</label>
-                <input type="email" class="ip-email">
+            <h1>One-Time Password</h1>
+            <form action="" class="otp-form-container">
+                <label for="OTP-Code">Code</label>
+                <input type="text" class="ip-code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,6);">
             </form>
-                <button onclick="window.location.href='../login/index.html'">Reset Password</button>
-                <p>Remember your password? <a href="../login/index.html">Login Here!</a></p>
+                <button onclick="window.location.href='../login/index.html'" type="submit" id="">Submit</button>
         </div>
     </div>
 </body>

@@ -1,0 +1,80 @@
+#wrapper{
+    min-height: 100vh;
+}
+
+body{
+    background: var(--color-container-bg);
+}
+
+main{
+  margin: 90px auto;    
+}
+
+/* SETTINGS SECEONDARY HEADER STYLE FOR BACK BUTTON */
+.settings-header {
+  position: fixed;
+  background-color: transparent;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+.back-style{
+  display: flex;
+  justify-content: center;
+  align-items: center;   
+}
+
+/* SETTINGS STYLE */
+.setting-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: black;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+  background-color: white;
+}
+
+.setting-item:hover {
+  background-color: #f9f9f9;
+}
+
+.setting-item .label {
+  font-weight: bold;
+}
+
+.setting-item .value {
+  font-style: italic;
+  color: #555;
+}
+
+.setting-item .arrow {
+  color: #aaa;
+  padding-left: 10px;
+}
+
+.reset-container {
+  padding: 30px;
+  text-align: center;
+}
+
+.reset-btn {
+  background-color: white;
+  border: none;
+  color: red;
+  font-weight: bold;
+  font-size: 16px;
+  width: 250px;
+  padding: 10px 25px;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
+.reset-btn:hover {
+  background-color: #f9f9f9;
+}

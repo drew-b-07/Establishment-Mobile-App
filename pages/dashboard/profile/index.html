@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Devices</title>
+  <title>Profile</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="../../../assets/css/global-style.css">
@@ -12,26 +12,134 @@
   <link rel="stylesheet" href="assets/css/tablet-size-responsiveness.css">
 </head>
 <body>
-  <div id="wrapper">
-    
-    <header>
-      <nav>
-        <h1>Profile</h1>
-      </nav>
-    </header>
+    <div id="wrapper">
+      
+      <header>
+        <nav>
+          <h1>Profile</h1>
+        </nav>
+      </header>
 
-    <main>
-      <!-- Page content here -->
-       Profile Page
+      <!-- PROFILE MAIN PAGE -->
+    <main class="profile-container">
+      <div class="profile-item">
+        <p>Name: </p>
+        <div class="overlay" onclick="closePopup()"></div>
+        <div id="pop-up" class="pop-up">
+          <img src="../../../assets/images/edit icon.png" alt="edit icon" class="edit-icon" onclick="EditName()">
+        </div>
+      </div>
+
+      <div class="profile-item">
+        <p>Est. Name: </p>
+        <div class="overlay" onclick="closePopup()"></div>
+        <img src="../../../assets/images/edit icon.png" alt="edit icon" class="edit-icon" onclick="EditEstName()">
+      </div>
+
+      <div class="profile-item">
+        <p>Phone Number: </p>
+        <div class="overlay" onclick="closePopup()"></div>
+        <img src="../../../assets/images/edit icon.png" alt="edit icon" class="edit-icon" onclick="EditPhoneNumber()">
+      </div>
+
+      <div class="profile-item">
+        <p>Password: </p>
+        <div class="overlay" onclick="closePopup()"></div>
+        <img src="../../../assets/images/edit icon.png" alt="edit icon" class="edit-icon" onclick="ChangePassword()">
+      </div>
+
+      <div id="map" class="profile-item">
+        <p>Map Location: </p>
+        <div class="overlay" onclick="closePopup()"></div>
+        <div id="pop-up" class="pop-up">
+          <img src="../../../assets/images/edit icon.png" alt="edit icon" class="edit-icon" onclick="">
+        </div>
+      </div>
+
+      <!-- PROFILE EDIT MODAL BOX -->
+
+      <!-- MODAL BOX OPACITY BACKGROUND OVERLAY -->
+      <div class="overlay" id="overlay"></div>
+
+      <!-- EDIT NAME MODAL -->
+      <div class="modal" id="changeNameModal">
+        <h2>Change Name</h2>
+        <form action="">
+          <input type="text" id="firstName" placeholder="Enter First Name">
+
+          <input type="text" id="surname" placeholder="Enter Surname">
+
+          <div class="modal-buttons">
+            <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
+            <button type="button" class="change-btn">Change</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- EDIT EST.NAME MODAL -->
+      <div class="modal" id="changeEstNameModal">
+        <h2>Change Establishment Name</h2>
+        <form action="">
+          <input type="text" id="estName" placeholder="Enter New Est. Name">
+            
+          <div class="modal-buttons">
+            <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
+            <button type="button" class="change-btn">Change</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- EDIT PHONE NUMBER -->
+       <div class="modal" id="changePNumModal">
+        <h2>Change Phone Number</h2>
+        <form action="">
+          <input type="text" class="ip-pnumber" placeholder="Enter New Number" inputmode="numeric" pattern="[0-9]{11}" maxlength="11" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 11);">
+
+          <div class="modal-buttons">
+            <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
+            <button type="button" class="change-btn">Change</button>
+          </div>
+        </form>
+       </div>
+
+       <!-- EDIT/CHANGE PASSWORD -->
+        <div class="modal" id="changePassModal">
+          <h2>Change Password</h2>
+          <form action="">
+            <div class="password-container">
+              <input type="password" class="ip-cpassword" placeholder="Current Password" id="currentPassword">
+              <i class="fa-solid fa-eye-slash toggle-password" id="togglePassword1"></i>
+            </div>      
+
+            <div class="password-container">
+              <input type="password" class="ip-cpassword" placeholder="New Password" id="newPassword">
+              <i class="fa-solid fa-eye-slash toggle-password" id="togglePassword2"></i>
+            </div>
+
+            <div class="password-container">
+              <input type="password" class="ip-cpassword" placeholder="Confirm Password" id="confirmPassword">
+              <i class="fa-solid fa-eye-slash toggle-password" id="togglePassword3"></i>
+            </div>       
+
+          <div class="modal-buttons">
+            <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
+            <button type="button" class="change-btn">Change</button>
+          </div>
+
+          </form>
+        </div>
+
     </main>
 
-    <footer>
-      <nav>
-        <li class="nav-menu"><a href="../devices/index.html"><img class="icon-nav" src="../../../assets/images/devices non-active.png" alt="icon">Devices</a></li>
-        <li class="nav-menu"><a href="../history/index.html"><img class="icon-nav" src="../../../assets/images/history non-active.png" alt="icon">History</a></li>
-        <li class="current-nav nav-menu"><a href="#"><img class="icon-nav" src="../../../assets/images/profile active.png" alt="icon">Profile</a></li>
-      </nav>
-    </footer>
-  </div>
+      <footer>
+        <nav>
+          <li class="nav-menu"><a href="../devices/index.html"><img class="icon-nav" src="../../../assets/images/devices non-active.png" alt="icon">Devices</a></li>
+          <li class="nav-menu"><a href="../history/index.html"><img class="icon-nav" src="../../../assets/images/history non-active.png" alt="icon">History</a></li>
+          <li class="current-nav nav-menu"><a href="#"><img class="icon-nav" src="../../../assets/images/profile active.png" alt="icon">Profile</a></li>
+        </nav>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

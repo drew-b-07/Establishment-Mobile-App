@@ -7,26 +7,67 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../../assets/css/global-style.css">
     <link rel="stylesheet" href="assets/css/tablet-size-responsiveness.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
     <div id="wrapper">
         <div class="signup-container">
             <img src="../../assets/images/estab-icon.png" alt="img">
             <h1>Sign Up</h1>
             <form action="" class="signup-form-container">
-                <label for="fullname">Full Name</label>
-                <input type="text" class="ip-fullname">
-                <label for="email">Email Address</label>
-                <input type="email" class="ip-email">
-                <label for="password">Password</label>
-                <input type="password" class="ip-password">
-                <label for="c-password"> Confirm Password</label>
-                <input type="password" class="ip-cpassword">
+                <!-- STEP 1 SIGNING UP -->
+                <div class="form-step active" id="step1">
+                    <div class="fp-form-fields">
+                            <label for="firstname">First Name</label>
+                            <input type="text" class="ip-firstname">
+
+                            <label for="lastname">Last Name</label>
+                            <input type="text" class="ip-lastname">
+
+                            <label for="email">Email Address</label>
+                            <input type="email" class="ip-email">
+
+                            <label for="password">Password</label>
+                            <div class="password-container">
+                                <input type="password" class="ip-password" id="password">
+                                <i class="fa-solid fa-eye-slash toggle-password" id="togglePassword"></i>
+                            </div>
+
+                            <label for="c-password">Confirm Password</label>
+                            <div class="password-container">
+                                <input type="password" class="ip-cpassword" id="confirmPassword">
+                                <i class="fa-solid fa-eye-slash toggle-password" id="togglePassword"></i>
+                            </div>
+                        </div>
+
+
+                        <div class="button-group">
+                            <button type="button" id="nextBtn">Continue</button>
+                        </div>
+                </div>
+                <!-- STEP 2 SIGNING UP -->
+                <div class="form-step" id="step2">
+                    <div class="sp-form-fields">
+                        <label for="estabname">Establishment Name</label>
+                        <input type="text" class="ip-estabname">
+
+                        <label for="pnumber">Phone Number</label>
+                        <input type="text" class="ip-pnumber" inputmode="numeric" pattern="[0-9]{11}" maxlength="11" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 11);">
+
+                        <label for="location">Location</label>
+                        <input type="text" class="ip-location">
+                        <div id="map"></div>
+                        
+                        <div class="button-group">
+                            <button type="button" id="prevBtn">Back</button>
+                            <button onclick="window.location.href='../login/index.html'" type="button">Submit</button>
+                        </div>
+                    </div>
+                </div>
             </form>
-                <button onclick="window.location.href ='../signup2/index.html'">Continue</button>
                 <p>Do you have an account? <a href="../login/index.html">Sign In Here!</a></p>
         </div>
     </div>
-</head>
-<body>
-    
+    <script src="script.js"></script>
 </body>
 </html>

@@ -9,35 +9,65 @@
   overflow-y: auto;
 }
 
-/* ADD DEVICE ICON */
-.add-device{
-  display: flex;
-  justify-content: center;
-  align-items: center;            
-  right: 20px;
-  top: 10px;
+/* ADD DEVICE ICON WITH SEPARATE HEADER */
+.devices-header {
   position: fixed;
+  background-color: transparent;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.devices-header h1 {
+  font-size: 36px;
+  color: var(--color-white);
+}
+
+.devices-header .add-device {
+  border: none;
+  cursor: pointer;
 }
 
 /* DEVICE STATUS CONTAINER */
-.details-container {
+.details-container-link{
   background: var(--color-container-bg);
-  width: 332px;
-  height: 113px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 340px;
+  height: 170px;
   padding: 3px;
-  margin: 50px auto;
 }
 
-.details-container h2 {
+.details-container-link:hover{
+  box-shadow: 0 30px 30px rgba(44, 44, 44, 0.15);
+}
+
+.details-container-link a{
+  text-decoration: none;
+  color: black;
+}
+
+.details-container-link h2 {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 5px;
 }
 
-.details-container p {
+.details-container-link p {
   margin: 3px 0;
   font-size: 15px;
   font-weight: 600;
+}
+
+.readings-details{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+/* MAIN CONTAINER */
+main{
+  margin: 100px auto;
 }
