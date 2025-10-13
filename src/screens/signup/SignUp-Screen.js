@@ -83,22 +83,25 @@ export default function SignUpScreen({ navigation }) {
       // Add condition to check phone number if it is noticed by your panels.
 
       var { data: establishment_users, error } = await supabase.from("establishment_users").select("*").eq("email", email);
-
       if(error) return showErrorToast(`${error.message}`, `${error.cause}`);
 
-      if (establishment_users.length > 0) {
-        if(!establishment_users[0].verified) {
-          showInfoToast("Your account is not yet, we sent you an email to verify your account.", "Unverified Account", 5000);
+      var { data: bfp_users, error } = await supabase.from("bfp_users").select("*").eq("email", email);
+      if(error) return showErrorToast(`${error.message}`, `${error.cause}`);
 
-          var {data, error} = await supabase.auth.resend({email, type: "signup", options: {emailRedirectTo: "https://ebok18.github.io/VerifiedAccount?role=est"}});
+      if(establishment_users.length > 0 || bfp_users.length > 0) return showErrorToast("User's is already existing.", "User Exist");
 
-          if(error) return showErrorToast(`${error.message}`, `${error.cause}`);
+      if(!establishment_users[0].verified) {
+        var {data, error} = await supabase.auth.resend({email, type: "signup", options: {emailRedirectTo: "https://ebok18.github.io/VerifiedAccount?role=est"}});
+
+        if(error) {
+          showErrorToast(`${error.message}`, `${error.cause}`);
         } else {
-          showErrorToast("User's is already existing.", "User Exist");
+          showInfoToast("Your account is not yet, we sent you an email to verify your account.", "Unverified Account", 5000);
         }
 
         return;
       }
+
 
       var {data: authData, error: authError} = await supabase.auth.signUp({email, password, options: {
         emailRedirectTo: "https://ebok18.github.io/VerifiedAccount?role=est",
@@ -133,105 +136,100 @@ export default function SignUpScreen({ navigation }) {
     }
   }
 
+  if(is_loading) return <ActivityIndicator size={"large"} />;
+
   return(
     <SafeAreaView>
       <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"}>
-        {
-          is_loading ? 
-          (<ActivityIndicator size="large" />)
-          : (
-          <ScrollView>
+        <ScrollView>
 
-            <Image source={establishment_logo} />
-            <Text>Sign Up</Text>
+          <Image source={establishment_logo} />
+          <Text>Sign Up</Text>
 
-            <Text>First Name</Text>
-            <TextInput 
-              inputMode="text"
-              placeholder="First Name"
-              value={first_name}
-              onChangeText={setFirstName}
-            />
-            <Text>Last Name</Text>
-            <TextInput
-              inputMode="text"
-              placeholder="Last Name"
-              value={last_name}
-              onChangeText={setLastName}
-            />
+          <Text>First Name</Text>
+          <TextInput 
+            inputMode="text"
+            placeholder="First Name"
+            value={first_name}
+            onChangeText={setFirstName}
+          />
+          <Text>Last Name</Text>
+          <TextInput
+            inputMode="text"
+            placeholder="Last Name"
+            value={last_name}
+            onChangeText={setLastName}
+          />
 
-            <Text>Email</Text>
-            <TextInput
-              inputMode="email"
-              placeholder="Email"
-              value={email}
-              onChangeText={setEmail}
-            />
+          <Text>Email</Text>
+          <TextInput
+            inputMode="email"
+            placeholder="Email"
+            value={email}
+            onChangeText={setEmail}
+          />
 
-            <Text>Password</Text>
-            <TextInput
-              inputMode="text"
-              placeholder="Password" 
-              secureTextEntry={true}
-              value={password}
-              onChangeText={setPassword}
-            />
+          <Text>Password</Text>
+          <TextInput
+            inputMode="text"
+            placeholder="Password" 
+            secureTextEntry={true}
+            value={password}
+            onChangeText={setPassword}
+          />
 
-            <Text>Confirm Password</Text>
-            <TextInput
-              inputMode="text"
-              placeholder="Confirm Password"
-              secureTextEntry={true}
-              value={confirm_password}
-              onChangeText={setConfirmPassword}
-            />
+          <Text>Confirm Password</Text>
+          <TextInput
+            inputMode="text"
+            placeholder="Confirm Password"
+            secureTextEntry={true}
+            value={confirm_password}
+            onChangeText={setConfirmPassword}
+          />
 
-            <Text>Establishment Name</Text>
-            <TextInput 
-              inputMode="text"
-              placeholder="Establishment Name"
-              value={establishment_name}
-              onChangeText={setEstablishmentName}
-            />
+          <Text>Establishment Name</Text>
+          <TextInput 
+            inputMode="text"
+            placeholder="Establishment Name"
+            value={establishment_name}
+            onChangeText={setEstablishmentName}
+          />
 
-            <Text>Phone Number</Text>
-            <TextInput
-              inputMode="tel"
-              placeholder="Phone Number"
-              value={phone_number}
-              onChangeText={setPhoneNumber}
-            />
+          <Text>Phone Number</Text>
+          <TextInput
+            inputMode="tel"
+            placeholder="Phone Number"
+            value={phone_number}
+            onChangeText={setPhoneNumber}
+          />
 
-            <MapView
-              style={styles.map}
-              initialRegion={initial_region}
-              onPress={onMapPress}
-              cameraZoomRange={{minCenterCoordinateDistance: 0, maxCenterCoordinateDistance: 19}}
-              minZoomLevel={0}
-              maxZoomLevel={19}
-            >
-              {
-                marker_coordinates &&
-                <Marker 
-                  coordinate={marker_coordinates}
-                  draggable
-                  onDragEnd={(e) => {
-                    const { latitude, longitude } = e.nativeEvent.coordinate;
-                    setMarkerCoordinates({ latitude, longitude });
-                    setLatitude(latitude.toString());
-                    setLongitude(longitude.toString());
-                  }}
-                />
-              }
-            </MapView>
+          <MapView
+            style={styles.map}
+            initialRegion={initial_region}
+            onPress={onMapPress}
+            minZoomLevel={0}
+            maxZoomLevel={19}
+          >
+            {
+              marker_coordinates &&
+              <Marker 
+                coordinate={marker_coordinates}
+                draggable
+                onDragEnd={(e) => {
+                  const { latitude, longitude } = e.nativeEvent.coordinate;
+                  setMarkerCoordinates({ latitude, longitude });
+                  setLatitude(latitude.toString());
+                  setLongitude(longitude.toString());
+                }}
+              />
+            }
+          </MapView>
 
-            <Button title="Sign Up" onPress={onSignUpPress} />
+          <Button title="Sign Up" onPress={onSignUpPress} />
 
-            <Text onPress={() => navigation.reset({index: 0, routes: [{name: "Login"}]}) } >Login</Text>
+          <Text onPress={() => navigation.reset({index: 0, routes: [{name: "Login"}]}) } >Login</Text>
 
-          </ScrollView>
-          )
-        }
+        </ScrollView>
       </KeyboardAvoidingView>
     </SafeAreaView>
   );

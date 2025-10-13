@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 
   },
   login_form: {
-    flexGrow: 1
+    // flexGrow: 1
   },
   label: {
 

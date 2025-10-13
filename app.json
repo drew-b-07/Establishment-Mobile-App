@@ -25,6 +25,11 @@
       },
       "edgeToEdgeEnabled": true,
       "package": "com.kobetuazon.establishmentapp"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "096280e5-c82e-4368-8eb4-0bc3f820c6ac"
+      }
     }
   }
 }
