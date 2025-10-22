@@ -100,11 +100,11 @@
 /* PASSWORD HIDE STYLE */
 .password-container {
   position: relative;
-  width: 100%;
 }
 
 .password-container input{
-  max-width: 100%;
+  padding-left: 10px;
+  padding-right: 38px;
 }
 
 .password-container .toggle-password {

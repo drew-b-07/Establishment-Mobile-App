@@ -29,7 +29,7 @@ function closeModal() {
 }
 
 // Optional: close when clicking outside modal
-document.getElementById("overlay").addEventListener("click", closeModal);
+// document.getElementById("overlay").addEventListener("click", closeModal);
 
 //HIDE PASSWORD FUNCTION
 const togglePassword1 = document.getElementById("togglePassword1");
